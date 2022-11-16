@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace StockMicroservice.Models
+namespace StockService.Models
 {
     public class StockValues
     {

@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using StockMicroservice.Services;
+using StockService.Services;
 using System;
 using System.Globalization;
 
-namespace StockMicroservice.Controllers
+namespace StockService.Controllers
 {
     [Route("api/v1.0/market/[controller]")]
     [ApiController]

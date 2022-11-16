@@ -6,7 +6,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
-using Prometheus;
 
 namespace OcelotpiGateway
 {
@@ -55,11 +54,6 @@ namespace OcelotpiGateway
             app.UseRouting();
 
             app.UseAuthorization();
-
-            app.UseMetricServer();
-
-            app.UseHttpMetrics();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

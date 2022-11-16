@@ -6,7 +6,7 @@ using System;
 // If you have enabled NRTs for your project, then un-comment the following line:
 // #nullable disable
 
-namespace StockMicroservice.Models
+namespace StockService.Models
 {
     public class Stocks
     {

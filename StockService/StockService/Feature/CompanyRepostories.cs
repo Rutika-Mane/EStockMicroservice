@@ -1,66 +1,66 @@
-﻿using StockMicroservice.Infrastructure;
-using StockMicroservice.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿//using StockService.Infrastructure;
+//using StockService.Models;
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Threading.Tasks;
 
-namespace StockMicroservice.Feature
-{
-    public class CompanyRepostories : ICompanyRepositories
-    {
-        private StockMarketDatabaseSettings stockMarketContext;
+//namespace StockService.Feature
+//{
+//    public class CompanyRepostories : ICompanyRepositories
+//    {
+//        private StockMarketDatabaseSettings stockMarketContext;
 
-        public CompanyRepostories(StockMarketDatabaseSettings stockMarketContext)
-        {
-            this.stockMarketContext = stockMarketContext;
-        }
+//        public CompanyRepostories(StockMarketDatabaseSettings stockMarketContext)
+//        {
+//            this.stockMarketContext = stockMarketContext;
+//        }
 
-        public List<Stocks> GetAllCompany()
-        {
-            if(stockMarketContext != null)
-            {                
-                var result = (from c in stockMarketContext.CompanyDetails
-                             orderby c.CompanyName
-                             select c).ToList();
+//        public List<Stocks> GetAllCompany()
+//        {
+//            if(stockMarketContext != null)
+//            {                
+//                var result = (from c in stockMarketContext.CompanyDetails
+//                             orderby c.CompanyName
+//                             select c).ToList();
 
-                return result;
-            }
+//                return result;
+//            }
 
-            return null;
-        }
+//            return null;
+//        }
 
-        public Stocks GetCompanyById(string code)
-        {
-            if (stockMarketContext != null)
-            {
-                var result = (from c in stockMarketContext.CompanyDetails
-                              where c.CompanyCode == code
-                              orderby c.CompanyName
-                              select c).FirstOrDefault();
+//        public Stocks GetCompanyById(string code)
+//        {
+//            if (stockMarketContext != null)
+//            {
+//                var result = (from c in stockMarketContext.CompanyDetails
+//                              where c.CompanyCode == code
+//                              orderby c.CompanyName
+//                              select c).FirstOrDefault();
 
-                return result;
-            }
+//                return result;
+//            }
 
-            return null;
-        }
+//            return null;
+//        }
 
-        public Stocks CreateCompany(Stocks companyDetails)
-        {
-            if(companyDetails != null)
-            {
-                stockMarketContext.Add(companyDetails);
-                stockMarketContext.SaveChanges();
+//        public Stocks CreateCompany(Stocks companyDetails)
+//        {
+//            if(companyDetails != null)
+//            {
+//                stockMarketContext.Add(companyDetails);
+//                stockMarketContext.SaveChanges();
 
-                var result = (from c in stockMarketContext.CompanyDetails
-                              where c.CompanyCode == companyDetails.CompanyCode
-                              orderby c.CompanyName
-                              select c).FirstOrDefault();
+//                var result = (from c in stockMarketContext.CompanyDetails
+//                              where c.CompanyCode == companyDetails.CompanyCode
+//                              orderby c.CompanyName
+//                              select c).FirstOrDefault();
 
-                return result;
-            }
+//                return result;
+//            }
 
-            return null;
-        }
-    }
-}
+//            return null;
+//        }
+//    }
+//}

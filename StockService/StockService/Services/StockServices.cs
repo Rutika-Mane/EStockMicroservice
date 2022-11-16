@@ -1,10 +1,10 @@
-﻿using StockMicroservice.Models;
+﻿using StockService.Models;
 using MongoDB.Driver;
 using System.Collections.Generic;
 using System.Linq;
 using System;
 
-namespace StockMicroservice.Services
+namespace StockService.Services
 {
     public class StockServices
     {
